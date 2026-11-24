@@ -22,5 +22,5 @@ public class GlamourLogIPC : IPC
 
     [EzIPC]
     [LuaFunction(description: "GlamourLog does its things")]
-    public readonly Action EntrustAll = null!;
+    public Func<bool> EntrustAll = null!;
 }
