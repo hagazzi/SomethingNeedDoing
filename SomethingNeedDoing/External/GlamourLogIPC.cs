@@ -17,10 +17,6 @@ public class GlamourLogIPC : IPC
     public Func<bool> HasAnythingToStore = null!;  
 
     [EzIPC]
-    [LuaFunction(description: "Checks if GlamourLog has detected things to store ")]
-    public Func<bool> HasAnythingToStore = null!; 
-
-    [EzIPC]
     [LuaFunction(description: "Checks if GlamourLog is ready to store")]
     public Func<bool> ReadyToStore = null!;          
 }
