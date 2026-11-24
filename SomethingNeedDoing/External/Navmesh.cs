@@ -37,7 +37,7 @@ public class Navmesh : IPC
     [LuaFunction(
         description: "Pathfinds and moves to a destination",
         parameterDescriptions: ["dest", "fly"])]
-    public readonly Func<Vector3, bool, bool> PathfindAndMoveTo = null!;
+    public readonly Func<Vector3, bool> PathfindAndMoveTo = null!;
 
     [EzIPC("SimpleMove.%m")]
     [LuaFunction(description: "Checks if pathfinding is in progress")]
