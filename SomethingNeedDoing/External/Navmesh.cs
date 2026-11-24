@@ -37,7 +37,7 @@ public class Navmesh : IPC
     [LuaFunction(
         description: "Pathfinds and moves to a destination",
         parameterDescriptions: ["dest", "fly"])]
-    public Func<Vector3, bool> PathfindAndMoveTo = null!;
+    public Func<Vector3, bool, bool> PathfindAndMoveTo = null!;
 
     
     /*
@@ -86,5 +86,5 @@ public class Navmesh : IPC
    [LuaFunction(
     description: "Create a Vector3 Type",
     parameterDescriptions: ["X", "Y", "Z"])]    
-    public Vector3 Vector3(float x, float y, float z) => new(x, y, z);
+    public Vector3 Vec3(float x, float y, float z) => new Vector3(x, y, z);
 }
