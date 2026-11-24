@@ -37,7 +37,18 @@ public class Navmesh : IPC
     [LuaFunction(
         description: "Pathfinds and moves to a destination",
         parameterDescriptions: ["dest", "fly"])]
-    public readonly Func<Vector3, bool> PathfindAndMoveTo = null!;
+    public Func<Vector3, bool> PathfindAndMoveTo = null!;
+
+    
+    /*
+    [LuaFunction(
+    description: "Pathfinds and moves to X, Y, Z coordinates",
+    parameterDescriptions: ["x", "y", "z", "fly"])]
+    public bool PathfindAndMoveToCoords(float x, float y, float z, bool fly = false)
+    {
+        return PathfindAndMoveTo(new Vector3(x, y, z), fly);
+    }
+    */
 
     [EzIPC("SimpleMove.%m")]
     [LuaFunction(description: "Checks if pathfinding is in progress")]
@@ -71,4 +82,9 @@ public class Navmesh : IPC
         description: "Finds a point on the floor",
         parameterDescriptions: ["p", "allowUnlandable", "halfExtentXZ"])]
     public readonly Func<Vector3, bool, float, Vector3?> PointOnFloor = null!;
+
+   [LuaFunction(
+    description: "Create a Vector3 Type",
+    parameterDescriptions: ["X", "Y", "Z"])]    
+    public Vector3 Vector3(float x, float y, float z) => new(x, y, z);
 }
