@@ -16,7 +16,12 @@ public class GlamourLogIPC : IPC
     public Func<int> _hasAnythingToStore = null!;  
 
     [LuaFunction(description: "Checks if GlamourLog has detected things to store ")]
-    public int HasAnythingToStore() => _hasAnythingToStore();
+    public int HasAnythingToStore() 
+    {
+        var result =  _hasAnythingToStore();
+        Plugin.Log.Debug($"HasAnythingToStore -> {result}");
+        return result
+    }
 
     [EzIPC]
     [LuaFunction(description: "Checks if GlamourLog is ready to store")]
