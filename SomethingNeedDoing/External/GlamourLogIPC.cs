@@ -19,7 +19,7 @@ public class GlamourLogIPC : IPC
     public int HasAnythingToStore() 
     {
         var result =  _hasAnythingToStore();
-        Plugin.Log.Debug($"HasAnythingToStore -> {result}");
+        Plugin.ChatGui.Print($"HasAnythingToStore -> {result}");
         return result;
     }
 
