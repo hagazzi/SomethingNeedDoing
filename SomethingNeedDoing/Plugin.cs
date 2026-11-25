@@ -4,17 +4,12 @@ using Dalamud.Plugin;
 using ECommons;
 using ECommons.Configuration;
 using Microsoft.Extensions.Hosting;
-using Dalamud.Plugin;
-using Dalamud.Plugin.Services;
 
 namespace SomethingNeedDoing;
 
 [AutoConstruct]
 public partial class Plugin : IAsyncDalamudPlugin
-{
-    [PluginService] internal static IPluginLog Log { get; private set; } = null!;
-    [PluginService] internal static IChatGui ChatGui { get; private set; } = null!;
-    
+{   
     public string Name => Svc.PluginInterface.InternalName;
     internal string Prefix => "SND";
 
