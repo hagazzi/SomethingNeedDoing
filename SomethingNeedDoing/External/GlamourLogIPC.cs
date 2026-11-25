@@ -10,13 +10,13 @@ public class GlamourLogIPC : IPC
 
 
     //public Func<bool> IsBusy = null!;
-    [EzIPC]
-    public Func<bool> IsBusy = null!;    
+    [EzIPC("IsBusy")]
+    public Func<bool> _IsBusy = null!;    
     [LuaFunction(description: "Checks if GlamourLog is busy ")]
-    public bool GIsBusy()
+    public bool IsBusy()
     {
-        var result = IsBusy();
-        Svc.Log.Debug($"HasAnythingToStore -> {result}");
+        var result = _IsBusy();
+        Svc.Log.Debug($"IsBusy -> {result}");
         return result;
     }
 
