@@ -21,12 +21,12 @@ public class GlamourLogIPC : IPC
     }
 
     [EzIPC]
-    public Func<int> _hasAnythingToStore = null!;  
+    public Func<int> HasAnythingToStore = null!;  
 
     [LuaFunction(description: "Checks if GlamourLog has detected things to store ")]
-    public int HasAnythingToStore() 
+    public int GHasAnythingToStore() 
     {
-        var result =  _hasAnythingToStore();
+        var result =  HasAnythingToStore();
         Svc.Log.Debug($"HasAnythingToStore -> {result}");
         return result;
     }
