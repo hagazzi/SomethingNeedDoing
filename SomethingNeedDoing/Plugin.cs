@@ -10,6 +10,9 @@ namespace SomethingNeedDoing;
 [AutoConstruct]
 public partial class Plugin : IAsyncDalamudPlugin
 {
+    [PluginService] internal static IPluginLog Log { get; private set; } = null!;
+    [PluginService] internal static IChatGui ChatGui { get; private set; } = null!;
+    
     public string Name => Svc.PluginInterface.InternalName;
     internal string Prefix => "SND";
 
