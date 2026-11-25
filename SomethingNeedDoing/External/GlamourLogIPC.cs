@@ -21,7 +21,7 @@ public class GlamourLogIPC : IPC
     }
 
     [EzIPC("HasAnythingToStore")]
-    public Func<int> _HasAnythingToStore = null!;  
+    private Func<int> _HasAnythingToStore = null!;  
 
     [LuaFunction(description: "Checks if GlamourLog has detected things to store ")]
     public int HasAnythingToStore() 
