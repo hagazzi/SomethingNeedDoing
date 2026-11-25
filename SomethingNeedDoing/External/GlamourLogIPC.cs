@@ -20,7 +20,7 @@ public class GlamourLogIPC : IPC
     {
         var result =  _hasAnythingToStore();
         Plugin.Log.Debug($"HasAnythingToStore -> {result}");
-        return result
+        return result;
     }
 
     [EzIPC]
