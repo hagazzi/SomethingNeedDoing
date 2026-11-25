@@ -4,6 +4,8 @@ using Dalamud.Plugin;
 using ECommons;
 using ECommons.Configuration;
 using Microsoft.Extensions.Hosting;
+using Dalamud.Plugin
+using Dalamud.Plugin.Services;
 
 namespace SomethingNeedDoing;
 
