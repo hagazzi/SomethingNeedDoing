@@ -11,22 +11,22 @@ public class GlamourLogIPC : IPC
 
     //public Func<bool> IsBusy = null!;
     [EzIPC("IsBusy")]
-    public Func<bool> _IsBusy = null!;    
+    public Func<bool> _IB = null!;    
     [LuaFunction(description: "Checks if GlamourLog is busy ")]
-    public bool IsBusy()
+    public bool IB()
     {
-        var result = _IsBusy();
+        var result = _IB();
         Svc.Log.Debug($"IsBusy -> {result}");
         return result;
     }
 
     [EzIPC("HasAnythingToStore")]
-    private Func<int> _HasAnythingToStore = null!;  
+    public Func<int> _HATS = null!;  
 
     [LuaFunction(description: "Checks if GlamourLog has detected things to store ")]
-    public int HasAnythingToStore() 
+    public int HATS() 
     {
-        var result = _HasAnythingToStore();
+        var result = _HATS();
         Svc.Log.Debug($"HasAnythingToStore -> {result}");
         return result;
     }
