@@ -26,7 +26,7 @@ public class GlamourLogIPC : IPC
     [LuaFunction(description: "Checks if GlamourLog has detected things to store ")]
     public int HasAnythingToStore() 
     {
-        var result = _HasAnythingToStore
+        var result = _HasAnythingToStore;
         Svc.Log.Debug($"HasAnythingToStore -> {result}");
         return result;
     }
