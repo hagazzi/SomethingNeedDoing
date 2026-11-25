@@ -8,9 +8,17 @@ public class GlamourLogIPC : IPC
     public override string Name => "GlamourLog";
     public override string Repo => Repos.FirstParty;
 
+
+    //public Func<bool> IsBusy = null!;
     [EzIPC]
+    public Func<bool> _IsBusy = null!;    
     [LuaFunction(description: "Checks if GlamourLog is busy ")]
-    public Func<bool> IsBusy = null!;
+    public bool IsBusy()
+    {
+        var result =  _IsBusy();
+        Svc.Log.Debug($"HasAnythingToStore -> {result}");
+        return result;
+    }
 
     [EzIPC]
     public Func<int> _hasAnythingToStore = null!;  
