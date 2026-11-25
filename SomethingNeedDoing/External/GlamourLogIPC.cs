@@ -20,22 +20,22 @@ public class GlamourLogIPC : IPC
         return result;
     }
 
-    [EzIPC]
-    public Func<int> HasAnythingToStore = null!;  
+    [EzIPC("HasAnythingToStore")]
+    public Func<int> _HasAnythingToStore = null!;  
 
     [LuaFunction(description: "Checks if GlamourLog has detected things to store ")]
-    public int GHasAnythingToStore() 
+    public int HasAnythingToStore() 
     {
-        var result =  HasAnythingToStore();
+        var result = _HasAnythingToStore
         Svc.Log.Debug($"HasAnythingToStore -> {result}");
         return result;
     }
 
-    [EzIPC]
+    [EzIPC("ReadyToStore")]
     [LuaFunction(description: "Checks if GlamourLog is ready to store")]
     public Func<bool> ReadyToStore = null!;
 
-    [EzIPC]
+    [EzIPC("EntrustAll")]
     [LuaFunction(description: "GlamourLog does its things")]
     public Func<bool> EntrustAll = null!;
 }
